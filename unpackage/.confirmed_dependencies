@@ -1,0 +1,241 @@
+{
+	"login.html": {
+		"resources": [
+			"js/app.js",
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/mui.enterfocus.js",
+			"images/icon1.png",
+			"images/bg1.png",
+			"images/icon2.png",
+			"css/bootstrap.min.css",
+			"teachinmain.html",
+			"all.html",
+			"offcanvas-drag-right-plus-main.html",
+			"all_2.html",
+			"connection.html"
+		],
+		"refer": [
+			"teachinmain.html",
+			"all.html",
+			"offcanvas-drag-right-plus-main.html",
+			"all_2.html",
+			"connection.html"
+		]
+	},
+	"teachinmain.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"joint_control.html",
+			"login.html"
+		],
+		"refer": [
+			"joint_control.html",
+			"login.html"
+		]
+	},
+	"joint_control.html": {
+		"resources": [
+			"images/leftdown.png",
+			"images/fall.png",
+			"images/rightdown.png",
+			"images/down.png",
+			"images/left.png",
+			"images/right.png",
+			"images/rightup.png",
+			"images/leftup.png",
+			"images/up.png",
+			"images/rise.png"
+		]
+	},
+	"all.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"images/guide1.png",
+			"images/leftup.png",
+			"images/rightup.png",
+			"images/up.png",
+			"images/guide6.png",
+			"images/guide2.png",
+			"images/rise.png",
+			"images/guide7.png",
+			"images/leftdown.png",
+			"images/guide5.png",
+			"images/left.png",
+			"images/down.png",
+			"images/rightdown.png",
+			"images/fall.png",
+			"images/right.png",
+			"images/guide4.png",
+			"images/guide3.png"
+		]
+	},
+	"offcanvas-drag-right-plus-main.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"offcanvas-drag-right-plus-menu.html",
+			"right-menu.html"
+		]
+	},
+	"all_2.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"images/leftup.png",
+			"images/rightup.png",
+			"images/up.png",
+			"images/rise.png",
+			"images/leftdown.png",
+			"images/left.png",
+			"images/down.png",
+			"images/rightdown.png",
+			"images/fall.png",
+			"js/mui.min.js",
+			"images/right.png",
+			"css/mui.min.css",
+			"images/guide1.png",
+			"images/guide6.png",
+			"images/guide2.png",
+			"images/guide7.png",
+			"images/guide5.png",
+			"images/guide4.png",
+			"images/guide3.png",
+			"js/canvas.js"
+		],
+		"refer": [
+			"right-menu.html"
+		]
+	},
+	"right-menu.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"all_3.html",
+			"images/logo.png"
+		],
+		"refer": [
+			"all_3.html",
+			"all_2.html",
+			"taskassistant.html",
+			"teach_in.html",
+			"application.html",
+			"project.html",
+			"connection.html",
+			"login.html"
+		]
+	},
+	"all_3.html": {
+		"resources": [
+			"js/application.data.js",
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/canvas.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"connection.html": {
+		"resources": [
+			"js/connection.js",
+			"js/mui.picker.js",
+			"js/canvas.js",
+			"js/mui.poppicker.js",
+			"login.html",
+			"fonts/mui.ttf",
+			"js/connection.data.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"right-menu.html",
+			"login.html"
+		]
+	},
+	"taskassistant.html": {
+		"resources": [
+			"css/font-awesome.css",
+			"js/bootstrap.min.js",
+			"css/style.css",
+			"js/jquery.js",
+			"css/bootstrap.min.css",
+			"fonts/fontawesome-webfont.woff2",
+			"js/taskassistant.data.js",
+			"js/taskassistant.js",
+			"fonts/mui.ttf",
+			"js/mui.picker.js",
+			"js/canvas.js",
+			"js/mui.min.js",
+			"js/mui.poppicker.js",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"teach_in.html": {
+		"resources": [
+			"images/guide1.png",
+			"images/leftup.png",
+			"images/rightup.png",
+			"images/up.png",
+			"images/guide6.png",
+			"images/guide2.png",
+			"images/rise.png",
+			"images/guide7.png",
+			"images/leftdown.png",
+			"images/guide5.png",
+			"images/left.png",
+			"images/down.png",
+			"images/rightdown.png",
+			"images/fall.png",
+			"js/canvas.js",
+			"js/teach_in.js",
+			"images/right.png",
+			"images/guide4.png",
+			"images/guide3.png",
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	},
+	"application.html": {
+		"resources": [
+			"js/application.data.js",
+			"js/mui.picker.js",
+			"js/canvas.js",
+			"js/mui.min.js",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"project.html": {
+		"resources": [
+			"css/font-awesome.css",
+			"js/bootstrap.min.js",
+			"css/style.css",
+			"js/jquery.js",
+			"css/bootstrap.min.css",
+			"fonts/fontawesome-webfont.woff2",
+			"js/canvas.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	}
+}

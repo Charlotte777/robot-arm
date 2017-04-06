@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			p {
+				text-indent: 22px;
+			} 
+			span.mui-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+</style>
+<style>
+
+.mui-card .mui-control-content{padding: 10px;}
+.mui-control-content{height: 150px;}
+.pose-row{float: left;width: 50%;text-align: center;}
+.pose-value-row{text-align: center;width: 50%;float: left;}
+.pose-row img{width: 25px;height:25px;}
+td{text-align: center;}
+.mui-row.mui-fullscreen>[class*="mui-col-"]{height: 100%;}
+.mui-col-xs-3,.mui-control-content{overflow-y: auto;height: 100%;}
+.mui-segmented-control .mui-control-item{line-height: 40px;width: 100%;}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{background-color: #fff;}
+.joint-row{float: left;width: 50%;text-align: center;}
+.joint-value-row{text-align: center;}
+.joint-value-row input{width: 30%;height: 30px;margin-bottom: -5px;margin-top: -5px;}
+.teach-pose-css{margin-top: 110px;position: fixed;top: 0;right: 0;bottom: 0;left: 0;width: 100%;height: 100%;}
+
+
+h5.mui-content-padded{margin-left:0px !important;margin-top:20px !important;}
+.mui-card{margin:5px 0px;border-radius:0px;}
+.field-contain label{width:auto;padding-right:0;}
+.field-contain input[type='text']{width:40px;padding:20px 0;float:none;text-align:center;background:#efeff4;}
+.mui-input-row label{padding:10px 5px;}
+.mui-input-row.mui-input-range{padding-right:10px;}
+.mui-input-range input[type=range]{width:90%;float:right;}
+.leftup,.up,.rightup,.leftdown,.down,.rightdown{display:inline;}
+.One-third{float:left;width:33%;text-align:center;}
+li img{height:35px;width:35px;}
+.img-div{height:100%;margin-left:0%;margin-right:0%;}
+.img-div-height{height:50px;}
+.teach-pose-cell-css{    position: relative; overflow: hidden;padding:8px 8px; }
+.mui-table-view{padding:10px;position:static;}
+.rise-fall{height:70px;}
+h4{text-align:center;}
+
+			.mui-row.mui-fullscreen>[class*="mui-col-"] {
+				height: 100%;
+			}
+			.mui-col-xs-3,
+			.mui-control-content {
+				overflow-y: auto;
+				height: 100%;
+			}
+			.mui-segmented-control .mui-control-item {
+				line-height: 50px;
+				width: 100%;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				background-color: #fff;
+			}
+			.joint-row{
+				float: left;
+   				width: 50%; 
+				text-align: center;
+			}
+			.joint-value-row{
+				text-align: center;
+			}
+			.joint-value-row input{
+			width: 30%;
+		    height: 30px;
+		    margin-bottom: -5px;
+		    margin-top: -5px;
+		    }
+		    .mui-fullscreen{
+		    	   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+		    	
+		    }
+		</style>
+	
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+			<a id="help" class="mui-btn mui-btn-link mui-pull-right">Help</a>
+			<h1 class="mui-title">Teach In</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+	
+		
+            <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                <a class="mui-control-item" href="#item1">
+                    Joint Control
+                </a>
+                <a class="mui-control-item" href="#item2">
+                    Teach Pose
+                </a>
+                <a class="mui-control-item mui-active" href="#item3">
+                    Teach Path
+                </a>
+                <a class="mui-control-item" href="#item4">
+                    Pose TCP
+                </a>
+            </div>
+   
+        <div>
+            <div id="item1" class="mui-control-content">
+                <div>
+                    <input id="teachin_release" type="button" value="Release Robot">
+                    <input id="teachin_hold" type="button" value="Hold Robot">
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                X(mm)
+                            </label>
+                            <input type="text" id='x-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='x-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                Y(mm)
+                            </label>
+                            <input type="text" id='y-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='y-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                Z(mm)
+                            </label>
+                            <input type="text" id='z-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='z-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                Roll(deg)
+                            </label>
+                            <input type="text" id='roll-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='roll-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                Pitch(deg)
+                            </label>
+                            <input type="text" id='pitch-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='pitch-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                Yaw(deg)
+                            </label>
+                            <input type="text" id='yaw-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='yaw-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-card">
+                    <div class="mui-input-row mui-input-range field-contain">
+                        <div style="float:left">
+                            <label>
+                                Speed
+                            </label>
+                            <input type="text" id='speed-range-input' value='60'>
+                        </div>
+                        <div style="margin-left:120px;">
+                            <input type="range" id='speed-range' value="60" min="0" max="100" />
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 200px;">
+                    <div class="mui-table-view" style="float:left;
+                    width: 60%;
+                    ">
+                        <div class="img-div-height">
+                            <div class="img-div">
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="leftup" src="images/leftup.png">
+                                </li>
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="up" src="images/up.png">
+                                </li>
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="rightup" src="images/rightup.png">
+                                </li>
+                            </div>
+                        </div>
+                        <div class="img-div-height">
+                            <div class="img-div">
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="left" src="images/left.png">
+                                </li>
+                                <li class="mui-table-view-cell One-third">
+                                    <img>
+                                </li>
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="right" src="images/right.png">
+                                </li>
+                            </div>
+                        </div>
+                        <div class="img-div-height">
+                            <div class="img-div">
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="leftdown" src="images/leftdown.png">
+                                </li>
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="down" src="images/down.png">
+                                </li>
+                                <li class="mui-table-view-cell One-third">
+                                    <img id="rightdown" src="images/rightdown.png">
+                                </li>
+                            </div>
+                        </div>
+                        <h4>
+                            derection
+                            <h4>
+                    </div>
+                    <div class="mui-table-view" style="float: right;width: 40%;   ">
+                        <div style="text-align: center; ">
+                            <li class="mui-table-view-cell">
+                                <img id="rise" src="images/rise.png" class="rise-fall">
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <img id="fall" src="images/fall.png" class="rise-fall">
+                            </li>
+                        </div>
+                        <h4>
+                            rise or fall
+                            <h4>
+                    </div>
+                </div>
+ 
+            </div>
+            
+            
+            
+            
+            
+            <!------------------item2--------------------------->
+            <div id="item2" class="mui-control-content">
+                <div class="mui-content mui-row teach-pose-css">
+                    <div class="mui-col-xs-3">
+                        <div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical"
+                        style="margin-bottom: 110px;">
+                        </div>
+                    </div>
+                    <div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;margin-bottom: 110px;">
+                    </div>
+                </div>
+            </div>
+            <!------------------item3--------------------------->
+            <div id="item3" class="mui-control-content mui-active">
+                <div>
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div class="pose-row">
+                                Path Name:
+                            </div>
+                            <input class="pose-value-row" placeholder="搜索" value="" />
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="pose-row">
+                                <button type="button">
+                                    Record Path
+                                </button>
+                            </div>
+                            <div class="pose-value-row">
+                                <button type="button">
+                                    Stop Record
+                                </button>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="pose-row">
+                                <div class="pose-row">
+                                    Path Name
+                                </div>
+                                <div class="pose-value-row">
+                                    Speed
+                                </div>
+                            </div>
+                            <div class="pose-value-row">
+                                Operate
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="pose-row">
+                                <div class="pose-row">
+                                    path1
+                                </div>
+                                <input class="pose-value-row" value="1">
+                                </input>
+                            </div>
+                            <div class="pose-value-row">
+                                <button type="button">
+                                    Plya path
+                                </button>
+                                <button type="button">
+                                    Delete
+                                </button>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="pose-row">
+                                <div class="pose-row">
+                                    path1
+                                </div>
+                                <input class="pose-value-row" value="1">
+                                </input>
+                            </div>
+                            <div class="pose-value-row">
+                                <button type="button">
+                                    Plya path
+                                </button>
+                                <button type="button">
+                                    Delete
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!------------------item4--------------------------->
+            <div id="item4" class="mui-control-content">
+                <div>
+                    <ul id="posetcp" class="mui-table-view">
+
+                    </ul>
+                    <ul id="actuators" class="mui-table-view">
+ 
+                    </ul>
+                </div>
+            </div>
+        </div>
+  
+
+
+				
+
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/canvas.js"></script>
+	<script src="js/teach_in.js"></script>
+</html>

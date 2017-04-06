@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.name-row {
+				float: left;
+				width: 50%;
+				text-align: center;
+			}
+			.value-row {
+				float: left;
+			    text-align: center;
+			    width: 50%;
+			}
+			.mui-table-view-cell {
+			    position: relative;
+			    overflow: hidden;
+			    padding: 10px 10px;
+			}
+			.mui-table-view-cell input{
+			    border: none;
+			    background: #eee;
+			}
+			.h2_connect,.h2_calibrate{
+				float:left;
+				margin-left: 10px;
+			}
+			.step_1_2,.step_2_2{
+				float: right;
+				margin-top: 10px;
+				margin-right: 10px;
+				
+			}
+		</style>
+	
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+	
+			<h1 class="mui-title">Connection</h1>
+		</header>
+		<div class="mui-content">
+			
+			<h2 class="h2_connect">Connect</h2><span class="step_1_2">step 1/2</span>
+			<input id='model' class="mui-btn mui-btn-block" value="Please choose..." readonly></input>
+			<!--<div id='userResult' class="ui-alert"></div>-->
+			<input id='robot_kind' class="mui-btn mui-btn-block" value="Please choose..." readonly></input>
+		
+			<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+					<div class="name-row">Channel Name:</div>
+					<input class="value-row" value="1"></input>
+			</li>
+			<li class="mui-table-view-cell">
+					<div class="name-row">Channel Type:</div>
+					<input class="value-row" value="PEAK_SYS_PCAN_USB"></input>
+			</li>	
+			<li class="mui-table-view-cell">
+					<div class="name-row">Protocol:</div>
+					<input class="value-row" value="TMLCAN"></input>
+			</li>
+			<li class="mui-table-view-cell">
+					<div class="name-row">Host ID:</div>
+					<input class="value-row" value="10"></input>
+			</li>
+			<li class="mui-table-view-cell">
+					<div class="name-row">Baudrate:</div>
+					<input class="value-row" value="500000"></input>
+			</li>
+			</ul>
+			<button id="connectBtn" type="button" class="mui-btn mui-btn-success mui-btn-block">Connect</button>
+			
+			<h2 class="h2_calibrate">Calibrate</h2><span class="step_2_2">step 2/2</span>
+			<input id='new_or_existing_calibrate' class="mui-btn mui-btn-block" value="Please choose..." readonly></input>
+			<button id="calibrateBtn" type="button" class="mui-btn mui-btn-success mui-btn-block">Calibrate</button>
+		
+		</div>
+	
+	</body>
+	   <script src="js/mui.min.js"></script>
+	   <script src="js/canvas.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/connection.data.js"></script>
+		<script src="js/connection.js"></script>
+	</html>

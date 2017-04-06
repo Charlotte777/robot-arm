@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+				<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" /> 
+	
+		
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+			<a id='help'  class="mui-btn mui-btn-link mui-pull-right">Help</a>
+			<h1 class="mui-title">Application</h1>
+		</header>
+		<div class="mui-content">
+		
+			<button id='openscript' class="" type='button'>Open Script:None</button>
+			<button id='delete' class="" type='button'>Delete</button>
+			<div class="save">Save as:<input class="app_input" type="text"></input><button id='saveas'>Save</button></div>
+			<div class="mui-content-padded">
+				<button id='posespicker' class="" type='button'>Poses</button>
+				<!--<div id='userResult' class="ui-alert"></div>-->
+				<button id='pathspicker' class="" type='button'>Paths</button>
+				<button id='objectspicker' class="" type='button'>Objects</button>
+				<button id='lessonspicker' class="" type='button'>Lessons</button>
+				<button id='scriptpicker' class="" type='button'>Script Components</button>
+				<button id='testscript' class="" type='button'>Test Script</button>
+				<button id='stop' class="" type='button'>Stop</button>
+			</div>
+			<div class="mui-content-padded">
+				<textarea id="inputtextarea" rows="5" placeholder="#write your script here"></textarea>
+			</div>
+			<div class="mui-content-padded">
+				<h5>Output:<h5>
+				<textarea id="outputtextarea" rows="5"></textarea>
+			</div>
+			
+		</div>
+	
+	</body>
+	   <script src="js/mui.min.js"></script>
+	   <script src="js/canvas.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/application.data.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var posesPicker = new $.PopPicker();
+					posesPicker.setData(posespickerDate);
+					var posespickerButton = doc.getElementById('posespicker');
+					var posesResult = doc.getElementById('userResult');
+					posespickerButton.addEventListener('tap', function(event) {
+						posesPicker.show(function(items) {
+							//userResult.innerText = JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+
+				});
+			})(mui, document);
+		</script>
+</html>

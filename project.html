@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+	
+			<h1 class="mui-title">Project</h1>
+		</header>
+		<div class="mui-content">
+			
+		<div class="pro_box">
+				<div class="project">
+                    <div class="pro_btn">
+                    	<ul class="pro_btn_ul">
+                    		<li class="pro_btn_li">
+                    		   	<div class="pro_btn_title">
+                    		   		<div id="pro_title"><i id="pro_i" class="fa fa-angle-right"></i><span>project1</span></div>
+                    		   		<div class="right">
+                    		   			<i class="fa fa-star"></i>
+                    		   			<i class="fa fa-trash"></i>
+                    		   			<i class="fa fa-pencil"></i>
+                    		   		</div>
+                    		   	</div>
+                    		   	<div id="pro_btn_table" class="pro_btn_table">
+	                    			<table>
+	                    				<thead>
+	                    					<tr>
+	                    						<th>Name</th>
+	                    						<th>Modified</th>
+	                    						<th>Created</th>
+	                    					</tr>
+	                    				</thead>
+	                    				<tbody>
+	                    					<tr>
+	                    						<td>test2</td>
+	                    						<td>2016-05-19 16:02</td>
+	                    						<td>2016-08-01 16:02 </td>
+	                    					</tr>
+	                    				</tbody>
+	                    			</table>
+	                    		</div>
+                    		</li>
+                    		<li class="pro_btn_li">
+                    		   	<div class="pro_btn_title">
+                    		   		<div id="pro_title"><i class="fa fa-angle-right"></i><span>project2</span></div>
+                    		   		<div class="right">
+                    		   			<i class="fa fa-star"></i>
+                    		   			<i class="fa fa-trash"></i>
+                    		   			<i class="fa fa-pencil"></i>
+                    		   		</div>
+                    		   	</div>
+                    		</li>
+                    		<li class="pro_btn_li">
+                    		   	<div class="pro_btn_title">
+                    		   		<div id="pro_title"><i class="fa fa-angle-right"></i><span>project3</span></div>
+                    		   		<div class="right">
+                    		   			<i class="fa fa-star"></i>
+                    		   			<i class="fa fa-trash"></i>
+                    		   			<i class="fa fa-pencil"></i>
+                    		   		</div>
+                    		   	</div>
+                    		</li>
+                    		<li class="pro_btn_li">
+                    		   	<div class="pro_btn_title">
+                    		   		<div id="pro_title"><i class="fa fa-angle-right"></i><span>project4</span></div>
+                    		   		<div class="right">
+                    		   			<i class="fa fa-star"></i>
+                    		   			<i class="fa fa-trash"></i>
+                    		   			<i class="fa fa-pencil"></i>
+                    		   		</div>
+                    		   	</div>
+                    		</li>
+                    	</ul>
+                    </div>
+                </div>
+			</div>
+		</div>
+	
+	</body>
+	   <script src="js/mui.min.js"></script>
+	   <script src="js/canvas.js"></script>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script>
+			$(document).ready(function(){
+				$("#pro_title").click(function(){
+					$("#pro_btn_table").fadeToggle();
+				});
+				$("#pro_title").click(function(){
+					$("#pro_i").removeClass("fa fa-angle-right");
+				    $("#pro_i").toggleClass("fa fa-angle-down");
+					$("#pro_i").addClass("fa fa-angle-right");
+				});
+			});
+		</script>
+</html>

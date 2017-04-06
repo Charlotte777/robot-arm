@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+		.btn-width{
+			width: 50%;
+			
+		}
+		.field-contain input[type='text'] {
+				width:40px;
+				padding:20px 0;
+				float:none;
+				text-align:center;
+				background:#efeff4;
+			}
+	
+	.mui-input-row label {
+				padding:10px 5px;
+				    width: auto;
+			}
+			.mui-input-range .mui-tooltip{
+		    	display: none;
+		    	
+		    }
+		</style>
+	
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+			<a id="help" class="mui-btn mui-btn-link mui-pull-right">Help</a>
+			<h1 class="mui-title">Task Assistant</h1>
+		</header>
+		<div class="mui-content">
+			
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						Start Point:
+						<button id='Startpicker' type="button" class="mui-btn btn-width">
+						 pose1
+						</button>
+					</li>
+					<li class="mui-table-view-cell">
+						Grab Point:
+						<button id='Grabpicker' type="button" class="mui-btn btn-width">
+						 pose1
+						</button>
+					</li>
+					<li class="mui-table-view-cell">
+						Lift Point:
+						<button id='Liftpicker' type="button" class="mui-btn btn-width">
+						 pose1
+						</button>
+					</li>
+					<li class="mui-table-view-cell">
+						Place Point:
+						<button id='Placepicker' type="button" class="mui-btn btn-width">
+						 pose1
+						</button>
+					</li>
+					<li class="mui-table-view-cell">
+						End Point:
+						<button id='Endpicker' type="button" class="mui-btn btn-width">
+						 pose1
+						</button>
+					</li>
+				</ul>
+				
+				
+				
+				<ul class="mui-table-view">
+				 <div class="mui-input-row mui-input-range field-contain">
+                <div style="float:left">
+                    <label>
+                        Opening angle
+                    </label>
+                    <input type="text" id='angle-range-input' value='60'>
+                </div>
+                <div style="margin-left:20px;">
+                    <input type="range" id='angle-range' value="60" min="0" max="100" />
+                </div>
+            </div>
+         
+            <div class="mui-input-row mui-input-range field-contain">
+                <div style="float:left">
+                    <label>
+                        Speed
+                    </label>
+                    <input type="text" id='Speed-range-input' value='60'>
+                </div>
+                <div style="margin-left:20px;">
+                    <input type="range" id='Speed-range' value="60" min="0" max="100" />
+                </div>
+            </div>
+            <div class="mui-input-row mui-input-range field-contain">
+                <div style="float:left">
+                    <label>
+                        Repeat
+                    </label>
+                    <input type="text" id='Repeat-range-input' value='60'>
+                </div>
+                <div style="margin-left:20px;">
+                    <input type="range" id='Repeat-range' value="60" min="0" max="100" />
+                </div>
+            </div>
+        </ul>
+        
+        	<button id='reset' type="button" class="mui-btn mui-btn-block">Reset</button>
+        	
+			<div>Save as Script:<input type="text"  id="savename_input" placeholder="Name"/>
+			<button id='save'  type="button" class="mui-btn mui-btn-block">Save</button>
+			</div>
+			<button id='test_play' type="button" class="mui-btn mui-btn-block">Test/Play</button>
+		
+		</div>
+	
+	</body>
+	   <script src="js/mui.min.js"></script>
+	   <script src="js/canvas.js"></script>
+	<script src="js/mui.picker.js"></script>
+	<script src="js/mui.poppicker.js"></script>
+	<script src="js/taskassistant.data.js"></script>
+	<script src="js/taskassistant.js"></script>
+</html>
